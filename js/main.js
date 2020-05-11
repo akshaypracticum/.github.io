@@ -144,6 +144,7 @@ $(function () {
         id_n = i;
         $("#vehicle_id").text(`Vehicle ID: ${id}`);
         $("#vehicle_dpt").text(`Department: ${data_1[i].EqcDesc}`);
+        $("#vehicle_plot").text(`Comeback vs Regular (${data_1[i].EqcDesc})`)
         $("#vehicle_make").text(`Make: ${data_1[i].Make}`);
         $("#vehicle_model").text(`Model: ${data_1[i].Model}`);
         flag =1;
@@ -374,6 +375,7 @@ $(function () {
           lineThickness: 3,
           markerSize: 0,
           type: "splineArea",
+          yValueFormatString: "$###,###.##",
           dataPoints: [
             { x: date_month[0], y: data_1[id_n].cost_month_13_a },
             { x: date_month[1], y: data_1[id_n].cost_month_12_a },
@@ -393,7 +395,7 @@ $(function () {
       ]
     });
     charting_misc1.render();
-    $("#number_1").text(`$ ${Math.round(data_1[id_n].cost_month_1_a)}`);
+    $("#number_1").text(`$ ${CanvasJS.formatNumber(Math.round(data_1[id_n].cost_month_1_a), '###,###')}`);
 
     var charting_misc2 = new CanvasJS.Chart("orders-spline-area-chart", {
       animationEnabled: true,
@@ -426,6 +428,7 @@ $(function () {
           lineThickness: 3,
           markerSize: 0,
           type: "splineArea",
+          yValueFormatString: "$###,###.##",
           dataPoints: [
             { x: date_week[0], y: data_1[id_n].cost_week_5_a },
             { x: date_week[1], y: data_1[id_n].cost_week_4_a },
@@ -437,7 +440,7 @@ $(function () {
       ]
     });
     charting_misc2.render();
-    $("#number_2").text(`$ ${Math.round(data_1[id_n].cost_week_1_a)}`);
+    $("#number_2").text(`$ ${CanvasJS.formatNumber(Math.round(data_1[id_n].cost_week_1_a), '###,###')}`);
 
     var charting_misc3 = new CanvasJS.Chart("revenue-spline-area-chart", {
       animationEnabled: true,
@@ -489,7 +492,7 @@ $(function () {
       ]
     });
     charting_misc3.render();
-    $("#number_3").text(`$ ${Math.round(data_1[id_n].Meancost_6)}`);
+    $("#number_3").text(`$ ${CanvasJS.formatNumber(Math.round(data_1[id_n].Meancost_6), '###,###')}`);
 
     var comeback_not_sum=data_1[id_n].Comeback_Not_1+data_1[id_n].Comeback_Not_2+data_1[id_n].Comeback_Not_3+data_1[id_n].Comeback_Not_4+
     data_1[id_n].Comeback_Not_5+data_1[id_n].Comeback_Not_6+data_1[id_n].Comeback_Not_7+data_1[id_n].Comeback_Not_8+data_1[id_n].Comeback_Not_9+
@@ -510,7 +513,7 @@ $(function () {
         cornerRadius: 0,
         fontColor: "#ffffff",
         contentFormatter: function (e) {
-          return e.entries[0].dataPoint.name + ": " + CanvasJS.formatNumber(e.entries[0].dataPoint.y, '###,###')  + "%";
+          return CanvasJS.formatNumber(e.entries[0].dataPoint.y, '###,###')  + "%" +" repair trips of this department are " + e.entries[0].dataPoint.name + " trips";
         }
       },
       data: [
@@ -632,7 +635,7 @@ $(function () {
         cornerRadius: 0,
         fontColor: "#424242",
         contentFormatter: function (e) {
-          return e.entries[0].dataPoint.label + ": " +  CanvasJS.formatNumber(Math.round(e.entries[0].dataPoint.y), '###,###');
+          return e.entries[0].dataPoint.label + " of this vehicle has been reparied " +  CanvasJS.formatNumber(Math.round(e.entries[0].dataPoint.y), '###,###') + " times";
         }
       },
       data: [
