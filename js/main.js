@@ -517,8 +517,8 @@ $(function () {
         }
       }, title:{
           text: "Total % Comeback & Regular",
-           fontColor: "#444444",
-        fontSize: 12,
+           fontColor: "#888888",
+        fontSize: 18,
          // more attributes
       },
       data: [
@@ -565,9 +565,9 @@ $(function () {
         shared: true
       }, title:{
           text: "Monthly Number of Repair Trips by Comeback/Regular",
-           fontColor: "#444444",
-            fontSize: 12,
-         // more attributes
+           fontColor: "#888888",
+           fontSize: 18,
+         //more attributes
       },
       data: [
         {
