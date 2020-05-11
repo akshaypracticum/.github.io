@@ -560,7 +560,8 @@ $(function () {
         shared: true
       }, title:{
           text: "Monthly Number of Repair Trips by Comeback/Regular",
-           fontColor: "white"
+           fontColor: "#444444",
+        fontSize: 12,
          // more attributes
       },
       data: [
