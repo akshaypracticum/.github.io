@@ -515,7 +515,7 @@ $(function () {
         contentFormatter: function (e) {
           return CanvasJS.formatNumber(e.entries[0].dataPoint.y, '###,###')  + "%" +" repair trips of this department are " + e.entries[0].dataPoint.name + " trips";
         }
-      },, title:{
+      }, title:{
           text: "Total % Comeback & Regular",
            fontColor: "#444444",
         fontSize: 12,
