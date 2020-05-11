@@ -1,5 +1,3 @@
-
-
 window.onload = function(){
   document.getElementById('b11').click();}
 
@@ -515,9 +513,10 @@ $(function () {
         contentFormatter: function (e) {
           return CanvasJS.formatNumber(e.entries[0].dataPoint.y, '###,###')  + "%" +" repair trips of this department are " + e.entries[0].dataPoint.name + " trips";
         }
-      }, title:{
-          text: "Total % Comeback & Regular",
-           fontColor: "#888888",
+      },
+      title:{
+          text: "Percentage of Comeback/Regular",
+           fontColor: "#999999",
         fontSize: 18,
          // more attributes
       },
@@ -563,11 +562,12 @@ $(function () {
         cornerRadius: 0,
         fontColor: "#ffffff",
         shared: true
-      }, title:{
+      },
+      title:{
           text: "Monthly Number of Repair Trips by Comeback/Regular",
-           fontColor: "#888888",
-           fontSize: 18,
-         //more attributes
+           fontColor: "#999999",
+        fontSize: 18,
+         // more attributes
       },
       data: [
         {
