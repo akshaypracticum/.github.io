@@ -154,7 +154,72 @@
         }
 
         </style>
+<style>
+                /* Popup container */
+                .popup {
+                  position: relative;
+                  display: inline-block;
+                  cursor: pointer;
+                }
 
+                /* The actual popup (appears on top) */
+                .popup .popuptext {
+                  visibility: hidden;
+                  width: 400px;
+                  background-color: #333333;
+                  color: #fff;
+                  text-align: center;
+                  border-radius: 6px;
+                  padding: 8px ;
+                  position: absolute;
+                  z-index: 1;
+                  bottom: 125%;
+                  left: 10%;
+                  margin-left: -180px;
+                }
+
+                /* Popup arrow */
+                .popup .popuptext::after {
+                  content: "";
+                  position: absolute;
+                  top: 100%;
+                  left: 50%;
+                  margin-left: -5px;
+                  border-width: 5px;
+                  border-style: solid;
+                  border-color: #555 transparent transparent transparent;
+                }
+
+                /* Toggle this class when clicking on the popup container (hide and show the popup) */
+                .popup .show {
+                  visibility: visible;
+                  -webkit-animation: fadeIn 1s;
+                  animation: fadeIn 1s
+                }
+
+                /* Add animation (fade in the popup) */
+                @-webkit-keyframes fadeIn {
+                  from {opacity: 0;}
+                  to {opacity: 1;}
+                }
+
+                @keyframes fadeIn {
+                  from {opacity: 0;}
+                  to {opacity:1 ;}
+                }
+
+
+
+
+
+                </style>
+                <script>
+                // When the user clicks on <div>, open the popup
+                function myFunction() {
+                  var popup = document.getElementById("myPopup");
+                  popup.classList.toggle("show");
+                }
+                </script>
   </head>
   <body>
 		<div class="container">
@@ -295,18 +360,31 @@
 			<hr>
 
 			<h3 id="vehicle_plot">Comeback vs Regular (Department)</h3>
+      <span style="float:right">
+            <div class="popup" onclick="myFunction()">
+                    <p>
 
+                      <p>
+                        <!-- Button trigger modal -->
+                                <button type="button" id="b12" class="btn btn-primary">
+                                Information
+                              </button>
+              <span class="popuptext" id="myPopup">
+                                          <span style="color: white;">
+                                          Explanation of this section : This Section shows information about Comeback & Regular Trips for the department of the selected Vehicle<br><br>
+                                          <span style="color: #00c700;">This shows the Total Regular Trips as a percentage % and as per month in the each month for the department in Green</span><br><br>
+                                          <span style="color: #c70000;">This shows the Total Comeback Trips as a percetnage % and as per month in the each month for the department in Red </span>
+                                          </span>
+
+
+
+
+
+              </span>
+                                        </div>
+      </span>
 			<!-- users doughnut and spline chart -->
 			<div class="row">
-				<div class="col-lg-3 col-md-4">
-					<div class="inview" id="users-doughnut-chart"></div>
-				</div>
-
-				<div class="col-lg-9 col-md-8">
-					<div class="inview" id="users-spline-chart"></div>
-				</div>
-			</div>
-			<!-- row users doughnut and spline chart -->
 
 			<hr>
 
