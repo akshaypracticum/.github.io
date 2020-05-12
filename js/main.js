@@ -142,7 +142,7 @@ $(function () {
         id_n = i;
         $("#vehicle_id").text(`Vehicle ID: ${id}`);
         $("#vehicle_dpt").text(`Department: ${data_1[i].EqcDesc}`);
-        $("#vehicle_plot").text(`Comeback vs Regular (Department Stats): ${data_1[i].EqcDesc}`)
+        $("#vehicle_plot").text(`Comeback vs Regular (Dept. Stats): ${data_1[i].EqcDesc}`)
         $("#vehicle_make").text(`Make: ${data_1[i].Make}`);
         $("#vehicle_model").text(`Model: ${data_1[i].Model}`);
         flag =1;
